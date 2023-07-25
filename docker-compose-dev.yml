@@ -1,0 +1,25 @@
+version: "3"
+services:
+  react-app:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src
+    environment:
+      - React_app_name=aman-dev-1
+
+  react-app1:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "7000:7000"
+    volumes:
+      - ./src:/app/src
+    environment:
+      - React_app_name=aman-dev-2
+    #env_file:
+      #- ./env   
